@@ -16,6 +16,7 @@ IMG_WIDTH = 500
 
 is_img_set = False
 img_bin = ""
+img_name = ""
 
 @app.route('/')
 def index():
@@ -26,7 +27,7 @@ def index():
 def result():
     if is_img_set:
         print("is_img_set: True")
-        return render_template('result.html', title="Result", img_base64=img_bin)
+        return render_template('result.html', title="Result", img_name=img_name)
     elif not is_img_set:
         print("is_img_set: False")
         abort(404)
@@ -69,9 +70,9 @@ def upload_file():
         #img_base64 = img_base64.format(img_base64)
 
         global is_img_set
-        global img_bin
+        global img_name
         is_img_set = True
-        img_bin = img_base64
+        img_name = fileName
 
         return redirect(url_for('result'))
     else:
