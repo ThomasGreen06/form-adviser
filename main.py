@@ -85,5 +85,5 @@ def setting():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="192.168.1.222", port=80)
 
