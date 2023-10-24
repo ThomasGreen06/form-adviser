@@ -1,0 +1,12 @@
+{% extends "app.html" %}
+{% block body %}
+<div class="row mt-5 pt-3">
+    <div class="col-1"></div>
+    <div class="col-10">
+        {% if img_name %}
+        <img src=/static/tmp/{{img_name}} width="100%" height="auto">
+        {% endif %}
+    </div>
+    <div class="col-1"></div>
+</div>
+{% endblock %}

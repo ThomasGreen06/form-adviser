@@ -1,0 +1,39 @@
+{% extends "app.html" %}
+{% block body %}
+
+<script>
+    window.onload = () => {
+        alert("Upload Model Image");
+    }
+</script>
+<form action="" method="post" enctype="multipart/form-data" class="d-none">
+    <input type="file" name="file" accept="image/jpeg, image/png" onchange="file_check(this
+    )" required>
+    <input type="submit" value="upload">
+</form>
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h2 class="display-3 text-center" style="font-weight:600;color:#454545;background-image:url('static/images/felt.svg');background-clip:text;-webkit-background-clip:text;color:transparent">Model Image</h2>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+    <div class="row p-4">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <input onchange="upload_model(this)" type="file" class="d-none" name="file" id="file" accept="image/jpeg, image/png">
+            <label for="file" class="w-100">
+                <div class="btn btn-success w-100 rounded-pill p-2">
+                    <span class="bi bi-upload"></span>&nbsp;&nbsp;Upload File
+                </div>
+            </label>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+
+{% endblock %}
